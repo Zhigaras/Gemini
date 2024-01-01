@@ -1,18 +1,15 @@
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.android.application)
+    id("app-android-convention")
     alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.zhigaras.gemini"
-    compileSdk = 34
     
     defaultConfig {
         applicationId = "com.zhigaras.gemini"
-        minSdk = 24
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         
@@ -38,10 +35,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"

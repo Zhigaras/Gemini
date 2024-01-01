@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Gemini"
 include(":app")
- 
+include(":ai")

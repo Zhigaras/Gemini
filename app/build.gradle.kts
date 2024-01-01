@@ -29,7 +29,6 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -43,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":ai"))
     
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -52,7 +52,6 @@ dependencies {
     implementation(libs.androidx.compose.graphics)
     implementation(libs.androidx.compose.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.google.ai.generativeai)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

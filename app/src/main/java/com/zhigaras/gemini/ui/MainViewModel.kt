@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
     
-    private val ai = GenerativeModel("gemini-pro", BuildConfig.GEMINI_KEY)
+    private val ai = GenerativeModel("gemini-pro", BuildConfig.BUILD_TYPE)
     val state = MutableStateFlow("...")
     
     fun generate() {

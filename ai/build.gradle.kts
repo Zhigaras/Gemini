@@ -1,7 +1,7 @@
+import java.util.Properties
+
 plugins {
     id("lib-android-convention")
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -9,8 +9,18 @@ android {
     
     defaultConfig {
         
+        val keystoreFile = project.rootProject.file("keys.properties")
+        val properties = Properties()
+        properties.load(keystoreFile.inputStream())
+        val geminiKey = properties.getProperty("GEMINI_KEY") ?: ""
+        buildConfigField("String", "GEMINI_KEY", geminiKey)
+        
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+    
+    buildFeatures {
+        buildConfig = true
     }
     
     buildTypes {

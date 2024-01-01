@@ -1,8 +1,5 @@
-import java.util.Properties
-
 plugins {
     id("app-android-convention")
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -17,14 +14,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        
-        val keystoreFile = project.rootProject.file("keys.properties")
-        val properties = Properties()
-        properties.load(keystoreFile.inputStream())
-        
-        val geminiKey = properties.getProperty("GEMINI_KEY") ?: ""
-        
-        buildConfigField("String", "GEMINI_KEY", geminiKey)
     }
     
     buildTypes {

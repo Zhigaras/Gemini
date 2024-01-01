@@ -15,5 +15,4 @@ repositories {
 dependencies {
     implementation(libs.androidGradlePlugin)
     implementation(libs.kotlinGradlePlugin)
-    compileOnly(files(libs::class.java.protectionDomain.codeSource.location))
 }

@@ -51,7 +51,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
@@ -70,6 +70,8 @@ dependencies {
     implementation(libs.androidx.compose.graphics)
     implementation(libs.androidx.compose.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.google.ai.generativeai)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)

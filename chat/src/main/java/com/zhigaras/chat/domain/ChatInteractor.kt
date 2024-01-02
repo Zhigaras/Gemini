@@ -2,5 +2,5 @@ package com.zhigaras.chat.domain
 
 interface ChatInteractor {
     
-    class Base(repository: ChatRepository) : ChatInteractor
+    class Base(private val repository: ChatRepository) : ChatInteractor
 }

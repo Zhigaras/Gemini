@@ -32,6 +32,8 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.koin)
     
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)

@@ -1,4 +1,3 @@
 package com.zhigaras.core
 
-interface UiState {
-}
+interface UiState

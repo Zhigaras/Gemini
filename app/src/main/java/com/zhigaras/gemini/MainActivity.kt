@@ -15,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.zhigaras.gemini.ui.MainViewModel
 import com.zhigaras.gemini.ui.theme.GeminiTheme
 
 class MainActivity : ComponentActivity() {

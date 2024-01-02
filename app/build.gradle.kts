@@ -1,18 +1,12 @@
-import java.util.Properties
-
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("app-android-convention")
 }
 
 android {
     namespace = "com.zhigaras.gemini"
-    compileSdk = 34
     
     defaultConfig {
         applicationId = "com.zhigaras.gemini"
-        minSdk = 24
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         
@@ -20,14 +14,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        
-        val keystoreFile = project.rootProject.file("keys.properties")
-        val properties = Properties()
-        properties.load(keystoreFile.inputStream())
-        
-        val geminiKey = properties.getProperty("GEMINI_KEY") ?: ""
-        
-        buildConfigField("String", "GEMINI_KEY", geminiKey)
     }
     
     buildTypes {
@@ -39,15 +25,10 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -61,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":ai"))
     
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -70,7 +52,6 @@ dependencies {
     implementation(libs.androidx.compose.graphics)
     implementation(libs.androidx.compose.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.google.ai.generativeai)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

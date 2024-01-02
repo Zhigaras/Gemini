@@ -29,6 +29,10 @@ androidx-test-compose-ui = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 
+androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp-plugin" }
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp-plugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp-plugin" }

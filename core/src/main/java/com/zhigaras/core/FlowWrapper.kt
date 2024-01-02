@@ -12,6 +12,8 @@ interface FlowWrapper<T : Any> {
     
     fun update(func: (T) -> T)
     
+    fun current(): T
+    
     @Composable
     fun collectAsState(): State<T>
     
@@ -26,6 +28,8 @@ interface FlowWrapper<T : Any> {
         override fun update(func: (T) -> T) {
             flow.update(func)
         }
+        
+        override fun current() = flow.value
         
         @Composable
         override fun collectAsState() = flow.collectAsState()

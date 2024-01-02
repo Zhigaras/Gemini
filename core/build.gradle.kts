@@ -24,6 +24,8 @@ android {
 dependencies {
     
     implementation(libs.androidx.core.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.activity.compose)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

@@ -1,14 +1,14 @@
 package com.zhigaras.chat.ui
 
-import androidx.lifecycle.ViewModel
+import com.zhigaras.chat.domain.ChatFlowWrapper
 import com.zhigaras.chat.domain.ChatInteractor
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import com.zhigaras.core.BaseViewModel
+import com.zhigaras.core.Dispatchers
 
-class ChatViewModel(private val interactor: ChatInteractor) : ViewModel() {
-    
-    private val _state = MutableStateFlow(ChatScreenState())
-    val state = _state.asStateFlow()
-    
-    
+class ChatViewModel(
+    dispatchers: Dispatchers,
+    override val uiFlowWrapper: ChatFlowWrapper,
+    private val interactor: ChatInteractor
+) : BaseViewModel<ChatUiState, ChatUiAction>(dispatchers) {
+
 }

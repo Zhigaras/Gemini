@@ -10,6 +10,7 @@ junit-android = "1.1.5"
 espresso = "3.5.1"
 generativeai = "0.1.1"
 koin = "3.5.3"
+coroutines = "1.8.0-RC2"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -22,6 +23,7 @@ androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-pr
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
 google-ai-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 
 junit = { module = "junit:junit", version.ref = "junit" }
 androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "junit-android" }

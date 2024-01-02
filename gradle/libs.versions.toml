@@ -32,6 +32,9 @@ androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifes
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp-plugin" }
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
+[bundles]
+compose = ["androidx-compose-ui", "androidx-compose-graphics", "androidx-compose-tooling-preview", "androidx-compose-material3"]
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp-plugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -1,5 +1,5 @@
 plugins {
-    id("lib-android-convention")
+    id("compose-lib-android-convention")
 }
 
 android {
@@ -24,6 +24,8 @@ android {
 dependencies {
     
     implementation(libs.androidx.core.ktx)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

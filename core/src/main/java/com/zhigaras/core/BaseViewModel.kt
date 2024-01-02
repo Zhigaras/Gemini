@@ -1,7 +1,7 @@
 package com.zhigaras.core
 
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.FlowCollector
 
 abstract class BaseViewModel<S : UiState, A : UiAction<FlowWrapper<S>>>(
     private val dispatchers: Dispatchers
@@ -9,9 +9,10 @@ abstract class BaseViewModel<S : UiState, A : UiAction<FlowWrapper<S>>>(
     
     protected abstract val uiFlowWrapper: FlowWrapper<S>
     
-    suspend fun observe(collector: FlowCollector<S>) = uiFlowWrapper.collect(collector)
+    @Composable
+    fun collectUiState() = uiFlowWrapper.collectAsState()
     
-    fun handleAction(action: A){
+    fun handleAction(action: A) {
         action.handle(uiFlowWrapper)
     }
 }

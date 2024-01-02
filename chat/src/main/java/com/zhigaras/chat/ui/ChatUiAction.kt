@@ -5,10 +5,11 @@ import com.zhigaras.core.UiAction
 
 interface ChatUiAction : UiAction<FlowWrapper<ChatUiState>> {
     
-    class PromptInputChanged(newPrompt: String) : ChatUiAction {
+    class PromptInputChanged(private val newPrompt: String) : ChatUiAction {
         override fun handle(flowWrapper: FlowWrapper<ChatUiState>) {
-            TODO("Not yet implemented")
+            flowWrapper.update {
+                it.copy(inputText = newPrompt)
+            }
         }
-        
     }
 }

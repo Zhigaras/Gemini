@@ -18,3 +18,5 @@ rootProject.name = "Gemini"
 includeBuild("build-logic")
 include(":app")
 include(":ai")
+include(":chat")
+include(":core")

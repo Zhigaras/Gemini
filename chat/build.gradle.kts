@@ -1,19 +1,13 @@
 plugins {
-    id("app-android-convention")
+    id("compose-lib-android-convention")
 }
 
 android {
-    namespace = "com.zhigaras.gemini"
+    namespace = "com.zhigaras.chat"
     
     defaultConfig {
-        applicationId = "com.zhigaras.gemini"
-        versionCode = 1
-        versionName = "1.0"
-        
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
     
     buildTypes {
@@ -25,24 +19,10 @@ android {
             )
         }
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
-    implementation(project(":chat"))
+    implementation(project(":ai"))
     implementation(project(":core"))
     
     implementation(libs.androidx.core.ktx)
@@ -52,11 +32,9 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.koin)
     
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.test.compose.ui)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.test.manifest)
 }

@@ -13,8 +13,8 @@ class MainViewModel : ViewModel() {
     
     fun generate() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = ai.generateContent("Say Hello in ten random languages")
-            state.value = response
+            val response = ai.generateText("Say Hello in ten random languages")
+            state.value = response.text()
         }
     }
 }

@@ -6,7 +6,7 @@ class GeminiAi : Ai {
     
     private val ai = GenerativeModel("gemini-pro", BuildConfig.GEMINI_KEY)
     
-    override suspend fun generateContent(prompt: String): String {
-        return ai.generateContent(prompt).text ?: "sorrrrry"
+    override suspend fun generateText(prompt: String): ResponseWrapper {
+        return ResponseWrapper(ai.generateContent(prompt))
     }
 }

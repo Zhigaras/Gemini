@@ -2,5 +2,5 @@ package com.zhigaras.ai
 
 interface Ai {
     
-    suspend fun generateContent(prompt: String): String
+    suspend fun generateText(prompt: String): ResponseWrapper
 }

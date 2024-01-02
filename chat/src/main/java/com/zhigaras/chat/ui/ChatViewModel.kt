@@ -12,7 +12,11 @@ class ChatViewModel(
 ) : BaseViewModel<ChatUiState, ChatUiAction>(dispatchers) {
     
     fun send() = scopeLaunch(
-        onBackground = { interactor.sendPrompt(uiFlowWrapper.current().inputText) },
+        onBackground = {
+            val prompt = uiFlowWrapper.current().inputText
+            handleAction(ChatUiAction.ClearInput())
+            interactor.sendPrompt(prompt)
+        },
         onUi = { it.handle(uiFlowWrapper) }
     )
 }

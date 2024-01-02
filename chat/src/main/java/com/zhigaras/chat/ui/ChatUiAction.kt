@@ -7,9 +7,13 @@ interface ChatUiAction : UiAction<FlowWrapper<ChatUiState>> {
     
     class PromptInputChanged(private val newPrompt: String) : ChatUiAction {
         override fun handle(flowWrapper: FlowWrapper<ChatUiState>) {
-            flowWrapper.update {
-                it.copy(inputText = newPrompt)
-            }
+            flowWrapper.update { it.copy(inputText = newPrompt) }
+        }
+    }
+    
+    class ClearInput : ChatUiAction {
+        override fun handle(flowWrapper: FlowWrapper<ChatUiState>) {
+            flowWrapper.update { it.copy(inputText = "") }
         }
     }
 }
